@@ -1,0 +1,14 @@
+{
+  "name": "nodejs_basics",
+  "version": "1.0.0",
+  "description": "node js practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nirajan karki",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
