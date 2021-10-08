@@ -23,4 +23,9 @@ app.post('/', (req,res)=>{
     res.send("Form submitted successfully");
 });
 
+// 404 not found page
+app.use((req,res)=>{
+    res.send("<h1>404 NOT FOUND</h1>");
+});
+
 app.listen(3000);
