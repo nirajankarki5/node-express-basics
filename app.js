@@ -1,15 +1,26 @@
+// HTTP POST request with experess
+
 const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
 const app = express();
 
-app.use('/example', (req, res, next)=>{
-    console.log("In the middleware");
-    res.send("Example route");
-    // next();
+// specifying the folder
+app.use('/public', express.static(path.join(__dirname, 'views')));
+
+// allows us to parse url encoded forms
+app.use(bodyParser.urlencoded({extended: false}));
+
+// to get the html file and view in '/' route
+app.get('/', (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'index.html'))
 });
 
-app.use('/', (req, res, next)=>{
-    console.log("In another middleware");
-    res.send("Main route");
+// POST request
+app.post('/', (req,res)=>{
+    console.log(req.body);
+    // some database operation here
+    res.send("Form submitted successfully");
 });
 
 app.listen(3000);
