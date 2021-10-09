@@ -1,11 +1,10 @@
+// a simple project that lets you enter books in homepage and redirect to /display page on button click
+
 const express = require('express');
 const app = express();
 
-// import people route
-const people = require('./routes/people');
+const book = require('./routes/book');
 
-app.use('/people', people);
-
-// since there is /people, our base url would be localhost:3000/people
+app.use('/', book);
 
 app.listen(3000);
